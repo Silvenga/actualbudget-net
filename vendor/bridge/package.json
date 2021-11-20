@@ -1,0 +1,28 @@
+{
+  "name": "actual-bridge",
+  "version": "1.1.3",
+  "license": "MIT",
+  "source": "index.js",
+  "main": "dist/module.js",
+  "targets": {
+    "default": {
+      "includeNodeModules": true,
+      "optimize": false,
+      "context": "node",
+      "isLibrary": false,
+      "outputFormat": "esmodule"
+    }
+  },
+  "engines": {
+    "node": ">= 14"
+  },
+  "scripts": {
+    "build": "parcel build --no-scope-hoist"
+  },
+  "dependencies": {
+    "@actual-app/api": "1.1.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
+}
