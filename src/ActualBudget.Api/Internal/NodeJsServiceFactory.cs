@@ -13,8 +13,14 @@ namespace ActualBudget.Api.Internal
             var services = new ServiceCollection();
             services.AddNodeJS();
 
-            services.Configure<NodeJSProcessOptions>(options => options.NodeAndV8Options = "--inspect-brk");
-            services.Configure<OutOfProcessNodeJSServiceOptions>(options => options.TimeoutMS = -1);
+            services.Configure<NodeJSProcessOptions>(options =>
+            {
+                options.NodeAndV8Options = "--inspect-brk";
+            });
+            services.Configure<OutOfProcessNodeJSServiceOptions>(options =>
+            {
+                options.TimeoutMS = -1;
+            });
 
             _serviceProvider = services.BuildServiceProvider();
         }

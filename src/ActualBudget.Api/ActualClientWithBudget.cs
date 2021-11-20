@@ -28,6 +28,7 @@ namespace ActualBudget.Api
 
         public async Task OpenAsync()
         {
+            //await _bridge.Execute("send", BudgetId);
             await _bridge.Execute("init");
             await _bridge.Execute("loadBudget", BudgetId);
             IsOpen = true;
@@ -35,7 +36,7 @@ namespace ActualBudget.Api
 
         public async Task<IReadOnlyList<DateTime>> GetBudgetMonthsAsync()
         {
-            return await _bridge.Execute<IReadOnlyList<DateTime>>("getBudgetMonth")
+            return await _bridge.Execute<IReadOnlyList<DateTime>>("getBudgetMonths")
                    ?? Array.Empty<DateTime>();
         }
 
